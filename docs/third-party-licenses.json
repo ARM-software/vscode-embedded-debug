@@ -1,0 +1,93 @@
+[
+    {
+        "name": "jszip",
+        "version": "3.10.1",
+        "spdx": "MIT",
+        "url": "https://github.com/Stuk/jszip",
+        "license": "https://github.com/Stuk/jszip/blob/master/LICENSE.markdown"
+    },
+    {
+        "name": "libusb",
+        "version": "1.0.19",
+        "spdx": "LGPL-2.1-or-later",
+        "url": "https://github.com/libusb/libusb",
+        "license": "https://github.com/libusb/libusb/blob/master/COPYING"
+    },
+    {
+        "name": "node-gyp-build",
+        "version": "4.3.0",
+        "spdx": "MIT",
+        "url": "https://github.com/prebuild/node-gyp-build",
+        "license": "https://github.com/prebuild/node-gyp-build/blob/master/LICENSE"
+    },
+    {
+        "name": "usb",
+        "version": "1.8.8",
+        "spdx": "MIT",
+        "url": "https://github.com/node-usb/node-usb",
+        "license": "https://github.com/node-usb/node-usb/blob/master/LICENSE"
+    },
+    {
+        "name": "xml2js",
+        "version": "0.4.23",
+        "spdx": "MIT",
+        "url": "https://github.com/Leonidas-from-XIV/node-xml2js",
+        "license": "https://github.com/Leonidas-from-XIV/node-xml2js/blob/master/LICENSE"
+    },
+    {
+        "name": "CRC",
+        "version": "0.0.1",
+        "spdx": "Unlicense",
+        "url": "https://github.com/panzi/CRC-and-checksum-functions",
+        "license": "https://github.com/panzi/CRC-and-checksum-functions/blob/main/LICENSE"
+    },
+    {
+        "name": "node-fetch",
+        "version": "2.6.7",
+        "spdx": "MIT",
+        "url": "https://github.com/node-fetch/node-fetch",
+        "license": "https://github.com/node-fetch/node-fetch/blob/master/LICENSE.md"
+    },
+    {
+        "name": "Open-CMSIS-Pack - devtools",
+        "version": "1.0.0",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/Open-CMSIS-Pack/devtools",
+        "license": "https://github.com/Open-CMSIS-Pack/devtools/blob/main/LICENSE"
+    },
+    {
+        "name": "vscode-debugadapter",
+        "version": "1.49.0",
+        "spdx": "MIT",
+        "url": "https://github.com/Microsoft/vscode-debugadapter-node",
+        "license": "https://github.com/Microsoft/vscode-debugadapter-node/blob/master/License.txt"
+    },
+    {
+        "name": "vscode-debugprotocol",
+        "version": "1.49.0",
+        "spdx": "MIT",
+        "url": "https://github.com/Microsoft/vscode-debugadapter-node",
+        "license": "https://github.com/Microsoft/vscode-debugadapter-node/blob/master/License.txt"
+    },
+    {
+        "name": "vscode-extension-telemetry",
+        "version": "0.6.2",
+        "spdx": "MIT",
+        "url": "https://github.com/microsoft/vscode-extension-telemetry",
+        "license": "https://github.com/microsoft/vscode-extension-telemetry/blob/main/LICENSE"
+    },
+    {
+        "name": "vscode-uri",
+        "version": "3.0.3",
+        "spdx": "MIT",
+        "url": "https://github.com/microsoft/vscode-uri",
+        "license": "https://github.com/microsoft/vscode-uri/blob/main/LICENSE.md"
+    },
+    {
+        "name": "xerces",
+        "version": "3.1.4",
+        "spdx": "Apache-2.0",
+        "url": "https://github.com/apache/xerces-c/",
+        "license": "https://github.com/apache/xerces-c/blob/master/LICENSE"
+    }
+]
