@@ -2,15 +2,15 @@
 
 ## Overview
 
-This extension allows you to do flashing and debugging on Arm Cortex-M based microcontrollers, development boards and debug probes implementing the Microsoft Debug Adapter Protocol (DAP).
+This extension allows you to do flashing and debugging on Arm Cortex-M based microcontrollers, development boards and debug probes implementing the Microsoft Debug Adapter Protocol (DAP). It can be installed individually or together with other extensions contained in the **Keil Studio Pack** available for Visual Studio Code Desktop and Visual Studio Code for the Web. Check the extension pack Readme first if you want to install the extensions using the pack.
 
-## Useful resources
+The **Arm Embedded Debugger** extension can work in combination with the **Arm Device Manager** (Identifier: `arm.device-manager`) and **Arm CMSIS csolution** (Identifier: `arm.cmsis-csolution`) extensions.
 
-The **Arm Embedded Debugger** extension works in combination with the **Arm Device Manager** (Identifier: `arm.device-manager`) and **Arm CMSIS csolution** (Identifier: `arm.cmsis-csolution`) extensions to flash csolution projects to a device and do debugging.
+This Readme explains how to flash a project to a device and how to start a debug session.
 
 ## Submit feedback
 
-To submit feedback, please [create an issue](https://github.com/ARM-software/vscode-embedded-debug/issues/new/choose).
+To submit feedback, please [create an issue](https://github.com/Arm-Software/vscode-embedded-debug/issues/new/choose).
 
 ## Flash your project to your device
 
@@ -30,7 +30,7 @@ Procedure:
             ``{
                 "type": "embedded-debug.flash",
                 "serialNumber": "${command:device-manager.getSerialNumber}",
-                "program": "${command:embedded-debug.getBinaryFile}",
+                "program": "${command:cmsis-csolution.getBinaryFile}",
                 "cmsisPack": "<path or URL of CMSIS Pack for your device>",
                 "problemMatcher": [],
                 "label": "embedded-debug.flash: Flash Device",
@@ -47,7 +47,7 @@ Procedure:
                 ``{
                     "type": "embedded-debug.flash",
                     "serialNumber": "${command:device-manager.getSerialNumber}",
-                    "program": "${command:embedded-debug.getBinaryFile}",
+                    "program": "${command:cmsis-csolution.getBinaryFile}",
                     "cmsisPack": "https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.K32L3A60_DFP.13.1.0.pack",
                     "label": "embedded-debug.flash: Flash Device",
                     "processorName": "cm4",
@@ -116,7 +116,7 @@ Procedure:
                     "type": "embedded-debug",
                     "request": "launch",
                     "serialNumber": "${command:device-manager.getSerialNumber}",
-                    "program": "${command:embedded-debug.getBinaryFile}",
+                    "program": "${command:cmsis-csolution.getBinaryFile}",
                     "cmsisPack": "<path or URL of CMSIS Pack for your device>"
                 }
             ]
@@ -133,13 +133,13 @@ Procedure:
         "version": "0.2.0",
         "configurations": [
             {
-                "name": "FRDM-K32L3A6 (CM0P)",
+                "name": "FRDM-K32L3A6 (CM4)",
                 "type": "embedded-debug",
                 "request": "launch",
                 "serialNumber": "${command:device-manager.getSerialNumber}",
                 "deviceName": "K32L3A60VPJ1A",
                 "processorName": "cm4",
-                "program": "${command:embedded-debug.getBinaryFile}",
+                "program": "${command:cmsis-csolution.getBinaryFile}",
                 "cmsisPack": "https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.K32L3A60_DFP.13.1.0.pack"
             }
         ]
@@ -183,9 +183,32 @@ Procedure:
 
 Look at the [Visual Studio Code documentation](https://code.visualstudio.com/docs/editor/debugging#_debug-actions) to learn more about the debugging features available in Visual Studio Code.
 
+### Supported debug probes
+
+#### WebUSB-enabled CMSIS-DAP debug probes
+
+The extension supports debug probes that implement the CMSIS-DAP protocol. See the [CMSIS-DAP](https://arm-software.github.io/CMSIS_5/DAP/html/index.html) documentation for general information.
+
+Such implementations are for example:
+
+- The DAPLink implementation: see the [ARMmbed/DAPLink](https://github.com/ARMmbed/DAPLink) repository.
+
+- The ULINKplus (firmware version 2) implementation: see the [Keil MDK](https://www2.keil.com/mdk5/ulink/ulinkplus) documentation.
+
+#### ST-LINK debug probes
+
+The extension supports ST-LINK/V2 probes and later, and the ST-LINK firmware available for these probes.
+
+The recommended debug implementation versions of the ST-LINK firmware are:
+
+- For ST-LINK/V2 and ST-LINK/V2-1 probes: J36 and later.
+- For STLINK-V3 probes: J6 and later.
+
+See "Firmware naming rules" in [Overview of ST-LINK derivatives](https://www.st.com/resource/en/technical_note/tn1235-overview-of-stlink-derivatives-stmicroelectronics.pdf) for more details on naming conventions.
+
 ### Known limitations
 
-* Support for the DWARF debugging standard limited to version 4. Please make sure that your application is built with the appropriate settings.
+* Support for the DWARF debugging standard is limited to version 4. Please make sure that your application is built with the appropriate settings.
 * Variables and registers are read-only.
-* Stack trace limited if the debugger is halted in assembler source files.
+* Stack trace is limited if the debugger is halted in assembler source files.
 * Watches are not supported.
