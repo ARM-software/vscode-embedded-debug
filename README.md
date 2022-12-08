@@ -30,7 +30,7 @@ Procedure:
             ``{
                 "type": "embedded-debug.flash",
                 "serialNumber": "${command:device-manager.getSerialNumber}",
-                "program": "${command:cmsis-csolution.getBinaryFile}",
+                "program": "${command:embedded-debug.getApplicationFile}",
                 "cmsisPack": "<path or URL of CMSIS Pack for your device>",
                 "problemMatcher": [],
                 "label": "embedded-debug.flash: Flash Device",
@@ -47,7 +47,7 @@ Procedure:
                 ``{
                     "type": "embedded-debug.flash",
                     "serialNumber": "${command:device-manager.getSerialNumber}",
-                    "program": "${command:cmsis-csolution.getBinaryFile}",
+                    "program": "${command:embedded-debug.getApplicationFile}",
                     "cmsisPack": "https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.K32L3A60_DFP.13.1.0.pack",
                     "label": "embedded-debug.flash: Flash Device",
                     "processorName": "cm4",
@@ -116,7 +116,7 @@ Procedure:
                     "type": "embedded-debug",
                     "request": "launch",
                     "serialNumber": "${command:device-manager.getSerialNumber}",
-                    "program": "${command:cmsis-csolution.getBinaryFile}",
+                    "program": "${command:embedded-debug.getApplicationFile}",
                     "cmsisPack": "<path or URL of CMSIS Pack for your device>"
                 }
             ]
@@ -139,7 +139,7 @@ Procedure:
                 "serialNumber": "${command:device-manager.getSerialNumber}",
                 "deviceName": "K32L3A60VPJ1A",
                 "processorName": "cm4",
-                "program": "${command:cmsis-csolution.getBinaryFile}",
+                "program": "${command:embedded-debug.getApplicationFile}",
                 "cmsisPack": "https://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.K32L3A60_DFP.13.1.0.pack"
             }
         ]
