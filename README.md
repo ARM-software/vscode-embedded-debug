@@ -167,7 +167,7 @@ Procedure:
 | `"verifyApplication"`       | Verify application against target memory for each application load operation in debug session. Default: true.|
 | `"connectMode"`             | Connection mode. Possible values: haltOnConnect (halts for any reset before running), underReset (holds external NRST line asserted), preReset (pre-reset using NRST), running (connects to running target without altering state). Default: haltOnConnect. |
 | `"resetMode"`               | Type of reset to use. Possible values: auto (debugger decides), system (use ResetSystem sequence), hardware (use ResetHardware sequence), processor (use ResetProcessor sequence). Default: auto. |
-| `"pathSubstitutions"`       | Path substitutions to use. Example: "pathSubstitutions": [{"find": "the string to find", "replace": "the string to replace"}]|
+| `"pathMapping"`       | Remote/local path substitutions to use to resolve source files. Example: "pathMapping": {"/remote/path": "/local/path"}|
 
 ### Debug
 

@@ -84,6 +84,13 @@
         "license": "https://github.com/microsoft/vscode-uri/blob/main/LICENSE.md"
     },
     {
+        "name": "websocket-stream",
+        "version": "5.5.2",
+        "spdx": "BSD-2-Clause",
+        "url": "https://github.com/maxogden/websocket-stream",
+        "license": "https://github.com/maxogden/websocket-stream/blob/master/LICENSE"
+    },
+    {
         "name": "xerces",
         "version": "3.1.4",
         "spdx": "Apache-2.0",
