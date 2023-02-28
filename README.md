@@ -77,7 +77,7 @@ Procedure:
 | `"programFlash"`            | Program code into flash. Default: true.                                               |
 | `"verifyFlash"`             | Verify the contents downloaded to flash. Default: true.                               |
 | `"resetRun"`                | Issue a hardware reset at end of flash download. Default: true.                       |
-| `"connectMode"`             | Connection mode. Possible values: haltOnConnect (halts for any reset before running), underReset (holds external NRST line asserted), preReset (pre-reset using NRST), running (connects to running target without altering state). Default: haltOnConnect.|
+| `"connectMode"`             | Connection mode. Possible values: auto (debugger decides), haltOnConnect (halts for any reset before running), underReset (holds external NRST line asserted), preReset (pre-reset using NRST), running (connects to running target without altering state). Default: auto.|
 | `"resetMode"`               | Type of reset to use. Possible values: auto (debugger decides), system (use ResetSystem sequence), hardware (use ResetHardware sequence), processor (use ResetProcessor sequence). Default: auto.|
 | `"eraseMode"`               | Type of flash erase to use. Possible values: sectors (erase only sectors to be programmed), full (erase full chip), none (skip flash erase). Default: sectors.|
 
@@ -165,7 +165,7 @@ Procedure:
 | `"debugFrom"`               | The symbol the debugger will run to before debugging. Default: `"main"`.              |
 | `"programNames"`            | Filename(s) of the programs to be used. Only used for labelling.                      |
 | `"verifyApplication"`       | Verify application against target memory for each application load operation in debug session. Default: true.|
-| `"connectMode"`             | Connection mode. Possible values: haltOnConnect (halts for any reset before running), underReset (holds external NRST line asserted), preReset (pre-reset using NRST), running (connects to running target without altering state). Default: haltOnConnect. |
+| `"connectMode"`             | Connection mode. Possible values: auto (debugger decides), haltOnConnect (halts for any reset before running), underReset (holds external NRST line asserted), preReset (pre-reset using NRST), running (connects to running target without altering state). Default: auto. |
 | `"resetMode"`               | Type of reset to use. Possible values: auto (debugger decides), system (use ResetSystem sequence), hardware (use ResetHardware sequence), processor (use ResetProcessor sequence). Default: auto. |
 | `"pathMapping"`       | Remote/local path substitutions to use to resolve source files. Example: "pathMapping": {"/remote/path": "/local/path"}|
 
