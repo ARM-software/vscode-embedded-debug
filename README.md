@@ -18,13 +18,32 @@ To submit feedback, please [create an issue](https://github.com/Arm-Software/vsc
 
 You must first configure a flash task to be able to run a project on your device. The task transfers the binary into the appropriate memory locations on the device flash memory.
 
+There are two flash tasks available:
+
+- **embedded-debug.daplink-flash**: Use this task for DAPLink devices. The DAPLink firmware takes care of the flash download.
+- **embedded-debug.flash:Flash Device**: Use this task for other CMSIS-DAP (such as Nu-Link2 and ULINKplus) and ST-Link devices. Flash algorithms contained in the CMSIS-Packs used in your project are deployed in the background to do the flash download.
+
 Procedure:
 
 1. In Visual Studio Code, go to **Terminal** > **Configure Tasks...**.
 
-1. In the drop-down list that opens at the top of the window, select **embedded-debug.flash:Flash Device**.
+1. In the drop-down list that opens at the top of the window, select **embedded-debug.daplink-flash:Flash Device (DAPLink)** or **embedded-debug.flash:Flash Device**.
 
     A `tasks.json` file opens with some default configuration.
+
+    Default configuration for **embedded-debug.daplink-flash:Flash Device (DAPLink)**:
+
+    ```
+            {
+              "type": "embedded-debug.daplink-flash",
+              "serialNumber": "${command:device-manager.getSerialNumber}",
+              "program": "${command:embedded-debug.getBinaryFile}",
+              "problemMatcher": [],
+              "label": "embedded-debug.daplink-flash: Flash Device (DAPLink)"
+            }
+    ```
+
+    Default configuration for **embedded-debug.flash:Flash Device**:
 
     ```
                {
@@ -37,7 +56,7 @@ Procedure:
                }
     ```
 
-1. You can override or extend the default configuration options as required. See [Flash configuration options](#flash-configuration-options) for more details.
+1. You can override or extend the default configuration options as required. See the [Flash configuration options for DAPLink devices](#flash-configuration-options-for-daplink-devices) and for [other devices](#flash-configuration-options-for-other-devices) for more details.
 
     For example:
 
@@ -54,27 +73,41 @@ Procedure:
 
 1. Save the `tasks.json` file.
 
-### Flash configuration options
+### Flash configuration options for DAPLink devices
+
+The task options below are the ones provided by the extension. Other Visual Studio Code options are also available. Use the **Trigger Suggestions** command (**Ctrl+Space**) to see what is available and check the [Visual Studio Code documentation on tasks](https://code.visualstudio.com/docs/editor/tasks), as well as the [Schema for tasks.json](https://code.visualstudio.com/docs/editor/tasks-appendix) page.
 
 |    Configuration option     |                                      Description                                      |
 |-----------------------------|---------------------------------------------------------------------------------------|
+| `"program"`                 | Path(s) (file or url) to the project(s) to use.                                       |
 | `"serialNumber"`            | Serial number of the connected USB device to use.                                     |
-| `"program"` or `"programs"` | Path(s) (file or url) to the project(s) to use.                                       |
+
+
+### Flash configuration options for other devices
+
+The task options below are the ones provided by the extension. Other Visual Studio Code options are also available. Use the **Trigger Suggestions** command (**Ctrl+Space**) to see what is available and check the [Visual Studio Code documentation on tasks](https://code.visualstudio.com/docs/editor/tasks), as well as the [Schema for tasks.json](https://code.visualstudio.com/docs/editor/tasks-appendix) page.
+
+|    Configuration option     |                                      Description                                      |
+|-----------------------------|---------------------------------------------------------------------------------------|
 | `"cmsisPack"`               | Path (file or url) to a DFP (Device Family Pack) CMSIS pack for your device.          |
-| `"pdsc"`                    | Path (file or url) to a pdsc file.                                                    |
-| `"vendorName"`              | CMSIS pack vendor name.                                                               |
-| `"deviceName"`              | CMSIS pack device name.                                                               |
-| `"processorName"`           | CMSIS pack processor name for multi-core devices.                                     |
-| `"sdf"`                     | Path (file or url) to an sdf file.                                                    |
-| `"dbgconf"`                 | Path (file or url) to a dbgconf file.                                                 |
-| `"resetAfterConnect"`       | Resets the device after having acquired control of the CPU. Default: true.            |
-| `"flm"` or `"flms"`         | Path(s) (file or url) to an flm file or flm files.                                    |
-| `"programFlash"`            | Program code into flash. Default: true.                                               |
-| `"verifyFlash"`             | Verify the contents downloaded to flash. Default: true.                               |
-| `"resetRun"`                | Issue a hardware reset at end of flash download. Default: true.                       |
 | `"connectMode"`             | Connection mode. Possible values: auto (debugger decides), haltOnConnect (halts for any reset before running), underReset (holds external NRST line asserted), preReset (pre-reset using NRST), running (connects to running target without altering state). Default: auto.|
-| `"resetMode"`               | Type of reset to use. Possible values: auto (debugger decides), system (use ResetSystem sequence), hardware (use ResetHardware sequence), processor (use ResetProcessor sequence). Default: auto.|
+| `"dbgconf"`                 | Path (file or url) to a dbgconf file.                                                 |
+| `"deviceName"`              | CMSIS pack device name.                                                               |
 | `"eraseMode"`               | Type of flash erase to use. Possible values: sectors (erase only sectors to be programmed), full (erase full chip), none (skip flash erase). Default: sectors.|
+| `"flm"` or `"flms"`         | Path(s) (file or url) to an flm file or flm files.                                    |
+| `"pdsc"`                    | Path (file or url) to a pdsc file.                                                    |
+| `"processorName"`           | CMSIS pack processor name for multi-core devices.                                     |
+| `"program"` or `"programs"` | Path(s) (file or url) to the project(s) to use.                                       |
+| `"programFlash"`            | Program code into flash. Default: true.                                               |
+| `"programMode"`             | Mode to program an application to a target. Default: auto                             |
+| `"resetAfterConnect"`       | Resets the device after having acquired control of the CPU. Default: true.            |
+| `"resetMode"`               | Type of reset to use. Possible values: auto (debugger decides), system (use ResetSystem sequence), hardware (use ResetHardware sequence), processor (use ResetProcessor sequence). Default: auto.|
+| `"resetRun"`                | Issue a hardware reset at end of flash download. Default: true.                       |
+| `"sdf"`                     | Path (file or url) to an sdf file.                                                    |
+| `"serialNumber"`            | Serial number of the connected USB device to use.                                     |
+| `"targetAddress"`           | Synonymous with serialNumber.                                                         |
+| `"vendorName"`              | CMSIS pack vendor name.                                                               |
+| `"verifyFlash"`             | Verify the contents downloaded to flash. Default: true.                               |
 
 ### Run your project
 
@@ -86,7 +119,7 @@ Procedure:
 
 1. Select **Terminal** > **Run Task...** to run the project on your device.
 
-1. In the drop-down list that opens at the top of the window, select the **embedded-debug.flash:Flash Device** task.
+1. In the drop-down list that opens at the top of the window, select the **embedded-debug.daplink-flash:Flash Device (DAPLink)** task or the **embedded-debug.flash:Flash Device** task.
 
 1. In the drop-down list that opens at the top of the window, select your device.
 
@@ -150,25 +183,28 @@ Procedure:
 
 ### Debug configuration options
 
+The task options below are the ones provided by the extension. Other Visual Studio Code options are also available. Use the **Trigger Suggestions** command (**Ctrl+Space**) to see what is available and check the [Visual Studio Code documentation on tasks](https://code.visualstudio.com/docs/editor/tasks).
+
 |    Configuration option     |                                      Description                                      |
 |-----------------------------|---------------------------------------------------------------------------------------|
-| `"serialNumber"`            | Serial number of the connected USB device to use.                                     |
-| `"program"` or `"programs"` | Path(s) (file or url) to the project(s) to use.                                       |
 | `"cmsisPack"`               | Path (file or url) to a DFP (Device Family Pack) CMSIS pack for your device.          |
-| `"pdsc"`                    | Path (file or url) to a pdsc file.                                                    |
-| `"vendorName"`              | CMSIS pack vendor name.                                                               |
-| `"deviceName"`              | CMSIS pack device name.                                                               |
-| `"processorName"`           | CMSIS pack processor name for multi-core devices.                                     |
-| `"sdf"`                     | Path (file or url) to an sdf file.                                                    |
-| `"dbgconf"`                 | Path (file or url) to a dbgconf file.                                                 |
-| `"resetAfterConnect"`       | Resets the device after having acquired control of the CPU. Default: true.            |
-| `"svd"` or `"svdPath"`      | Path (file or url) to an svd file.                                                    |
-| `"debugFrom"`               | The symbol the debugger will run to before debugging. Default: `"main"`.              |
-| `"programNames"`            | Filename(s) of the programs to be used. Only used for labelling.                      |
-| `"verifyApplication"`       | Verify application against target memory for each application load operation in debug session. Default: true.|
 | `"connectMode"`             | Connection mode. Possible values: auto (debugger decides), haltOnConnect (halts for any reset before running), underReset (holds external NRST line asserted), preReset (pre-reset using NRST), running (connects to running target without altering state). Default: auto. |
+| `"dbgconf"`                 | Path (file or url) to a dbgconf file.                                                 |
+| `"debugFrom"`               | The symbol the debugger will run to before debugging. Default: `"main"`.              |
+| `"deviceName"`              | CMSIS pack device name.                                                               |
+| `"pathMapping"`             | A mapping of remote paths to local paths to resolve source files.                     |
+| `"pdsc"`                    | Path (file or url) to a pdsc file.                                                    |
+| `"processorName"`           | CMSIS pack processor name for multi-core devices.                                     |
+| `"program"` or `"programs"` | Path(s) (file or url) to the project(s) to use.                                       |
+| `"programNames"`            | Filename or filenames of the projects to be used. Only used for labelling.            |
+| `"resetAfterConnect"`       | Resets the device after having acquired control of the CPU. Default: true.            |
 | `"resetMode"`               | Type of reset to use. Possible values: auto (debugger decides), system (use ResetSystem sequence), hardware (use ResetHardware sequence), processor (use ResetProcessor sequence). Default: auto. |
-| `"pathMapping"`       | Remote/local path substitutions to use to resolve source files. Example: "pathMapping": {"/remote/path": "/local/path"}|
+| `"sdf"`                     | Path (file or url) to an sdf file.                                                    |
+| `"serialNumber"`            | Serial number of the connected USB device to use.                                     |
+| `"svd"` or `"svdPath"`      | Path (file or url) to an svd file.                                                    |
+| `"targetAddress"`           | Synonymous with serialNumber.                                                         |
+| `"vendorName"`              | CMSIS pack vendor name.                                                               |
+| `"verifyApplication"`       | Verify application against target memory for each application load operation in debug session. Default: true.|
 
 ### Debug
 
