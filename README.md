@@ -141,43 +141,43 @@ Procedure:
 
     Some default configuration is added.
 
-```
-         {
-            "configurations": [
-                {
-                    "name": "Embedded Debug",
-                    "type": "embedded-debug",
-                    "request": "launch",
-                    "serialNumber": "${command:device-manager.getSerialNumber}",
-                    "program": "${command:embedded-debug.getApplicationFile}",
-                    "cmsisPack": "${command:device-manager.getDevicePack}",
-                    "debugFrom": "main"
-                }
-            ]
-         }
-```
+    ```
+            {
+                "configurations": [
+                    {
+                        "name": "Embedded Debug",
+                        "type": "embedded-debug",
+                        "request": "launch",
+                        "serialNumber": "${command:device-manager.getSerialNumber}",
+                        "program": "${command:embedded-debug.getApplicationFile}",
+                        "cmsisPack": "${command:device-manager.getDevicePack}",
+                        "debugFrom": "main"
+                    }
+                ]
+            }
+    ```
 
-1. You can override or extend the default configuration options as required. See [Debug configuration options](#debug-configurattion-options) for more details.
+1. You can override or extend the default configuration options as required. See [Debug configuration options](#debug-configuration-options) for more details.
 
     For example:
 
-```
-         {
-            "configurations": [
-                {
-                    "name": "FRDM-K32L3A6 (CM4)",
-                    "type": "embedded-debug",
-                    "request": "launch",
-                    "serialNumber": "${command:device-manager.getSerialNumber}",
-                    "deviceName": "K32L3A60VPJ1A",
-                    "processorName": "cm4",
-                    "program": "${command:embedded-debug.getApplicationFile}",
-                    "cmsisPack": "${command:device-manager.getDevicePack}",
-                    "debugFrom": "main"
-                }
-            ]
-         }
-```
+    ```
+            {
+                "configurations": [
+                    {
+                        "name": "FRDM-K32L3A6 (CM4)",
+                        "type": "embedded-debug",
+                        "request": "launch",
+                        "serialNumber": "${command:device-manager.getSerialNumber}",
+                        "deviceName": "K32L3A60VPJ1A",
+                        "processorName": "cm4",
+                        "program": "${command:embedded-debug.getApplicationFile}",
+                        "cmsisPack": "${command:device-manager.getDevicePack}",
+                        "debugFrom": "main"
+                    }
+                ]
+            }
+    ```
 
 1. Save the `launch.json` file.
 
