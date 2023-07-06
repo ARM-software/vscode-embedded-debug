@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.2
+- Fixed detection for NXP devices
+
 ## 1.0.1
 - Added intelligent flashing to skip when firmware is up to date.
 - Added device and processor picker enhancements.
