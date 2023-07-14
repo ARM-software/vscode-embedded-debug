@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.3
+- Fixed some issues with windows paths in the embedded debugger
+- Initial support for Arm Debugger flashing
+
 ## 1.0.2
 - Fixed detection for NXP devices
 
