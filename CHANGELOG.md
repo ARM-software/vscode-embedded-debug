@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.4
+- Fixed pack loading issue with run and debug
+
 ## 1.0.3
 - Fixed some issues with windows paths in the embedded debugger
 - Initial support for Arm Debugger flashing
