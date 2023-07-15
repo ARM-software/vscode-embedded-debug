@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.5
+- Better extension tracking for skipping flashing
+- Changes to build execution
+
 ## 1.0.4
 - Fixed pack loading issue with run and debug
 
