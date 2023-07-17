@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.6
+- Ensured default tasks exist for flash and debug
+- Removed default debug config labels
+
 ## 1.0.5
 - Better extension tracking for skipping flashing
 - Changes to build execution
