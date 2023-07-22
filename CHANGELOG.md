@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.8
+- Fixed paths for browser-based debug
+
 ## 1.0.6
 - Ensured default tasks exist for flash and debug
 - Removed default debug config labels
