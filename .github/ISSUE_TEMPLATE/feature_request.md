@@ -2,15 +2,23 @@
 name: Feature Request
 about: Suggest an idea for this extension.
 title: ''
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---
 
 Type: Feature Request
 
-<!-- Prior to creating a feature request, please review
-existing issues at https://github.com/ARM-software/vscode-device-manager/issues
+<!--
+Report issues with the Embedded Debug VS Code extension here.
+
+Report issues with…
+- The build tools or csolution standard here: https://github.com/Open-CMSIS-Pack/devtools/issues.
+- The Csolution extension here: https://github.com/ARM-software/vscode-cmsis-csolution/issues.
+- The USB device management extension here: https://github.com/ARM-software/vscode-device-manager/issues.
+
+Prior to creating a bug report, please review
+existing issues at https://github.com/ARM-software/vscode-cmsis-csolution/issues
 to avoid creating duplicates.
 -->
 
