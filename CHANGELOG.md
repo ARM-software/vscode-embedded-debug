@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.9
+- Improved flash progress display for Arm Debugger
+- Fixed device vendor resolution for Arm Debugger
+
 ## 1.0.8
 - Fixed paths for browser-based debug
 
