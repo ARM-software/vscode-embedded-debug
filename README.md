@@ -28,4 +28,4 @@ The **Arm Embedded Debugger** extension can work in combination with the **Arm D
 
 ## Submit feedback
 
-To submit feedback, please [open a bug report or a feature request](https://github.com/Arm-Software/vscode-embedded-debug/issues/new/choose).
+To submit feedback, please [see our support page](https://www.keil.arm.com/support/#:~:text=Using%20the%20Debugger).
