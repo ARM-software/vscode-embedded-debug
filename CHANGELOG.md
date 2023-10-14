@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.11
+- Changed pack asset service to use cmsis.io
+- Fixed broken documentation link
+- Various dependency package updates
+
 ## 1.0.10
 - Fixed broken flashing after VS Code update
 

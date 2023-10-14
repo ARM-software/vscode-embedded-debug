@@ -2,7 +2,7 @@
 
 ## Overview
 
-The complete [documentation](https://developer.arm.com/documentation/108029/latest/Extension-packs-and-extensions) for **Arm Embedded Debugger** and the other Keil Studio extensions is available on Arm Developer.
+The complete [documentation](https://developer.arm.com/documentation/108029/latest/Extension-pack-and-extensions) for **Arm Embedded Debugger** and the other Keil Studio extensions is available on Arm Developer.
 
 The **Arm Embedded Debugger** extension allows you to run and debug projects on Arm Cortex-M based microcontrollers, development boards and debug probes implementing the Microsoft Debug Adapter Protocol (DAP). It can be installed individually or together with other extensions contained in the packs available for Visual Studio Code Desktop and Visual Studio Code for the Web. 
 
