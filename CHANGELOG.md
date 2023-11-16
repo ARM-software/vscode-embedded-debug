@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.12
+- Fixed WebAssembly loading in VS Code Server
+
 ## 1.0.11
 - Changed pack asset service to use cmsis.io
 - Fixed broken documentation link
