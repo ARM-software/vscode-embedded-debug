@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.13
+- Fixed issue with checking program paths before flashing on Windows
+
 ## 1.0.12
 - Fixed WebAssembly loading in VS Code Server
 
