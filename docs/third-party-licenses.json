@@ -77,6 +77,13 @@
         "license": "https://github.com/microsoft/vscode-extension-telemetry/blob/main/LICENSE"
     },
     {
+        "name": "vscode-jsonrpc",
+        "version": "8.2.0",
+        "spdx": "MIT",
+        "url": "https://github.com/microsoft/vscode-languageserver-node/tree/main/jsonrpc",
+        "license": "https://github.com/microsoft/vscode-languageserver-node/blob/main/jsonrpc/License.txt"
+    },
+    {
         "name": "vscode-uri",
         "version": "3.0.3",
         "spdx": "MIT",
@@ -87,8 +94,8 @@
         "name": "websocket-stream",
         "version": "5.5.2",
         "spdx": "BSD-2-Clause",
-        "url": "https://github.com/maxogden/websocket-stream",
-        "license": "https://github.com/maxogden/websocket-stream/blob/master/LICENSE"
+        "url": "https://github.com/max-mapper/websocket-stream",
+        "license": "https://github.com/max-mapper/websocket-stream/blob/master/LICENSE"
     },
     {
         "name": "xerces",

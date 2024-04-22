@@ -1,5 +1,13 @@
 # Change Log
 
+## 1.1.1
+- Refactored device access to support debugging in SSH remotes and WSL
+- Added support for the [Eclipse CDT Cloud Peripheral Inspector](https://github.com/eclipse-cdt-cloud/vscode-peripheral-inspector)
+- Included Memory Inspector and Peripheral Inspector views by default
+- Split Arm Debugger for VS Code support into [Arm Debugger extension](https://marketplace.visualstudio.com/items?itemName=Arm.arm-debugger)
+- Support pre-filling DeviceName and ProcessorName from CMSIS Solution extension
+- Warn user when using HID devices
+
 ## 1.0.13
 - Fixed issue with checking program paths before flashing on Windows
 
