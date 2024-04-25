@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.2
+- Fixed empty Registers view in version 1.1.1
+- Fixed breakpoint management on Windows in version 1.1.1
+- Updates `programs` debug and run configuration option to accept a string with a comma-separated list of file paths
+
 ## 1.1.1
 - Refactored device access to support debugging in SSH remotes and WSL
 - Added support for the [Eclipse CDT Cloud Peripheral Inspector](https://github.com/eclipse-cdt-cloud/vscode-peripheral-inspector)
