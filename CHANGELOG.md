@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.0
+- Updated underlying USB package and switched to libusb v1.0.27
+- Stopped using workers when run in vscode-server
+
 ## 1.1.2
 - Fixed empty Registers view in version 1.1.1
 - Fixed breakpoint management on Windows in version 1.1.1
