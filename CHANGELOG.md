@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.2.1
+- Fixed RPC messages which were causing DAPLink flash to fail
+
 ## 1.2.0
 - Updated underlying USB package and switched to libusb v1.0.27
 - Stopped using workers when run in vscode-server
