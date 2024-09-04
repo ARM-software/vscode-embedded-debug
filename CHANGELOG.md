@@ -1,4 +1,7 @@
 # Change Log
+## 1.2.2
+- Fixed svd file loading in web environments
+- Make flash and debug task commands more resilient in web environments
 
 ## 1.2.1
 - Fixed RPC messages which were causing DAPLink flash to fail
