@@ -1,4 +1,14 @@
 # Change Log
+
+## [Unreleased]
+
+## 1.4.0
+- Fixed extension stalling on Linux
+
+## 1.2.3
+- Fixed registers view working with multiple debug sessions
+- Added edit command to register views if supported
+
 ## 1.2.2
 - Fixed svd file loading in web environments
 - Make flash and debug task commands more resilient in web environments

@@ -8,7 +8,7 @@
     },
     {
         "name": "libusb",
-        "version": "1.0.19",
+        "version": "1.0.27",
         "spdx": "LGPL-2.1-or-later",
         "url": "https://github.com/libusb/libusb",
         "license": "https://github.com/libusb/libusb/blob/master/COPYING"
@@ -22,7 +22,7 @@
     },
     {
         "name": "usb",
-        "version": "2.12.1",
+        "version": "2.14.0",
         "spdx": "MIT",
         "url": "https://github.com/node-usb/node-usb",
         "license": "https://github.com/node-usb/node-usb/blob/master/LICENSE"
@@ -78,7 +78,7 @@
     },
     {
         "name": "vscode-jsonrpc",
-        "version": "8.2.0",
+        "version": "8.2.1",
         "spdx": "MIT",
         "url": "https://github.com/microsoft/vscode-languageserver-node/tree/main/jsonrpc",
         "license": "https://github.com/microsoft/vscode-languageserver-node/blob/main/jsonrpc/License.txt"
